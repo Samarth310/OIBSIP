@@ -1,0 +1,42 @@
+1. Check if UFW is installed:
+   sudo apt update
+   sudo apt install ufw -y
+
+2. Check UFW status:
+   sudo ufw status
+
+3. Enable UFW (turn on firewall):
+   sudo ufw enable
+
+4. Allow SSH (so you don’t lock yourself out if accessing remotely):
+   sudo ufw allow ssh
+
+5. Allow specific port (example: HTTP on port 80):
+   sudo ufw allow 80/tcp
+
+6. Allow HTTPS (port 443):
+   sudo ufw allow 443/tcp
+
+7. Allow a custom port (example: 8080):
+   sudo ufw allow 8080/tcp
+
+8. Deny a port (example: Telnet on port 23):
+   sudo ufw deny 23/tcp
+
+9. Delete a rule (example: remove rule for port 8080):
+   sudo ufw delete allow 8080/tcp
+
+10. Set default policies:
+    - Deny all incoming traffic by default:
+      sudo ufw default deny incoming
+    - Allow all outgoing traffic by default:
+      sudo ufw default allow outgoing
+
+11. Reload firewall to apply changes:
+    sudo ufw reload
+
+12. Check firewall rules and status again:
+    sudo ufw status verbose
+
+13. Disable UFW (if needed):
+    sudo ufw disable
